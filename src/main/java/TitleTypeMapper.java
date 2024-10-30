@@ -1,18 +1,18 @@
 public class TitleTypeMapper {
     public static Title.TitleType map(String value) {
-        switch (value.toLowerCase()) {
-            case "videogame": return Title.TitleType.VideoGame;
-            case "tvpilot": return Title.TitleType.TvPilot;
-            case "movie": return Title.TitleType.Movie;
-            case "tvseries": return Title.TitleType.TvSeries;
-            case "tvminiseries": return Title.TitleType.TvMiniSeries;
-            case "short": return Title.TitleType.Short;
-            case "tvspecial": return Title.TitleType.TvSpecial;
-            case "tvshort": return Title.TitleType.TvShort;
-            case "video": return Title.TitleType.Video;
-            case "tvmovie": return Title.TitleType.TvMovie;
-            case "tvepisode": return Title.TitleType.TvEpisode;
-            default: throw new IllegalArgumentException("Unknown title type: " + value);
-        }
+        return switch (value.toLowerCase()) {
+            case "videogame" -> Title.TitleType.VideoGame;
+            case "tvpilot" -> Title.TitleType.TvPilot;
+            case "movie" -> Title.TitleType.Movie;
+            case "tvseries" -> Title.TitleType.TvSeries;
+            case "tvminiseries" -> Title.TitleType.TvMiniSeries;
+            case "short" -> Title.TitleType.Short;
+            case "tvspecial" -> Title.TitleType.TvSpecial;
+            case "tvshort" -> Title.TitleType.TvShort;
+            case "video" -> Title.TitleType.Video;
+            case "tvmovie" -> Title.TitleType.TvMovie;
+            case "tvepisode" -> Title.TitleType.TvEpisode;
+            default -> throw new IllegalArgumentException("Unknown title type: " + value);
+        };
     }
 }

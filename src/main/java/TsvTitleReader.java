@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class TsvTitleReader implements TitleReader {
@@ -40,7 +39,7 @@ public class TsvTitleReader implements TitleReader {
         String[] split = l.split("\t");
         return new Title(
                 split[0],
-                (Title.TitleType) TitleTypeMapper.map(split[1]),
+                TitleTypeMapper.map(split[1]),
                 split[2],
                 split[3],
                 toBoolean(split[4]),

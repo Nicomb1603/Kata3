@@ -9,7 +9,7 @@ public class TitleTypeHistogram implements Histogram<Title.TitleType, Title> {
         Map<Title.TitleType, Integer> histogram = new HashMap<>();
         read.forEach(t -> {
             histogram.putIfAbsent(t.titleType(), 0);
-            histogram.compute(t.titleType(), (tt, i) -> i+1);
+            histogram.put(t.titleType(), histogram.get(t.titleType()) + 1);
         });
         return histogram;
     }
